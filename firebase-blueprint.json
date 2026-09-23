@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "User": {
+      "path": "users/{userId}",
+      "fields": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "bio": { "type": "string" },
+        "status": { "type": "string" },
+        "lastSeen": { "type": "timestamp" },
+        "createdAt": { "type": "timestamp" }
+      }
+    },
+    "Chat": {
+      "path": "chats/{chatId}",
+      "fields": {
+        "id": { "type": "string" },
+        "participants": { "type": "array" },
+        "participantDetails": { "type": "map" },
+        "lastMessage": { "type": "map" },
+        "updatedAt": { "type": "timestamp" },
+        "createdAt": { "type": "timestamp" }
+      }
+    },
+    "Message": {
+      "path": "chats/{chatId}/messages/{messageId}",
+      "fields": {
+        "id": { "type": "string" },
+        "chatId": { "type": "string" },
+        "senderId": { "type": "string" },
+        "senderName": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "timestamp" },
+        "read": { "type": "boolean" }
+      }
+    }
+  }
+}

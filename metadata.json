@@ -1,0 +1,6 @@
+{
+  "name": "Orbitto - Real-Time Messenger",
+  "description": "Modern real-time one-to-one messaging web app with live presence, instant search, and sleek responsive design powered by Firebase.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
