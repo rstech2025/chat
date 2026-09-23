@@ -25,6 +25,7 @@ import {
   formatLastSeen,
   formatMessageDateHeader,
 } from '../utils/formatters';
+import { FormattedMessageText } from './FormattedMessageText';
 
 interface ChatAreaProps {
   currentUser: UserProfile;
@@ -297,13 +298,13 @@ export const ChatArea: React.FC<ChatAreaProps> = ({
                   )}
 
                   <div
-                    className={`max-w-[78%] sm:max-w-[65%] rounded-2xl px-4 py-2.5 shadow-sm text-sm break-words relative transition-all ${
+                    className={`max-w-[85%] sm:max-w-[70%] rounded-2xl px-4 py-2.5 shadow-sm text-sm break-words relative transition-all ${
                       isMe
                         ? 'bg-emerald-600 text-slate-50 rounded-br-xs'
                         : 'bg-slate-900 border border-slate-800 text-slate-100 rounded-bl-xs'
                     }`}
                   >
-                    <p className="leading-relaxed whitespace-pre-wrap">{msg.text}</p>
+                    <FormattedMessageText text={msg.text} isMe={isMe} />
                     <div
                       className={`flex items-center justify-end gap-1 mt-1 text-[10px] ${
                         isMe ? 'text-emerald-200' : 'text-slate-400'
@@ -423,7 +424,9 @@ export const ChatArea: React.FC<ChatAreaProps> = ({
 
               <div className="mt-4 p-3 bg-slate-800/60 rounded-2xl border border-slate-700/60 text-left text-xs">
                 <div className="text-slate-400 font-medium mb-1">About</div>
-                <div className="text-slate-200">{otherBio || 'Hey there! I am using Orbitto.'}</div>
+                <div className="text-slate-200">
+                  <FormattedMessageText text={otherBio || 'Hey there! I am using Orbitto.'} isMe={false} />
+                </div>
               </div>
 
               <div className="mt-4 flex gap-2">

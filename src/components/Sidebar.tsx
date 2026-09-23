@@ -8,6 +8,8 @@ import {
   Check,
   Sparkles,
   MessageSquare,
+  Github,
+  ExternalLink,
 } from 'lucide-react';
 import { UserProfile, ChatConversation } from '../types';
 import { formatChatListTime } from '../utils/formatters';
@@ -238,10 +240,23 @@ export const Sidebar: React.FC<SidebarProps> = ({
       </div>
 
       {/* Footer info */}
-      <div className="p-3 border-t border-slate-800/80 text-[11px] text-slate-400 text-center flex items-center justify-center gap-1.5 bg-slate-900/50">
-        <span>Orbitto</span>
-        <span>•</span>
-        <span>Real-time on Firestore</span>
+      <div className="p-3 border-t border-slate-800/80 text-[11px] text-slate-400 flex items-center justify-between px-4 bg-slate-900/50">
+        <div className="flex items-center gap-1.5">
+          <span className="font-semibold text-slate-300">Orbitto</span>
+          <span>•</span>
+          <span>Real-time</span>
+        </div>
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 text-slate-400 hover:text-slate-200 transition py-1 px-2 rounded-lg hover:bg-slate-800 border border-transparent hover:border-slate-700 cursor-pointer"
+          title="Open GitHub"
+        >
+          <Github className="w-3.5 h-3.5" />
+          <span>GitHub</span>
+          <ExternalLink className="w-3 h-3 opacity-60" />
+        </a>
       </div>
     </aside>
   );

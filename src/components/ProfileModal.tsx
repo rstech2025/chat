@@ -165,7 +165,7 @@ export const ProfileModal: React.FC<ProfileModalProps> = ({ user, onClose, onUpd
                 type="text"
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
-                placeholder="About you"
+                placeholder="e.g. Developer • https://github.com/username"
                 className="w-full pl-10 pr-3.5 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-slate-100 text-sm focus:outline-none focus:border-emerald-500"
               />
             </div>

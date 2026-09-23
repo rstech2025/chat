@@ -10,6 +10,12 @@ const distPath = path.join(__dirname, 'dist');
 
 // Middleware
 app.use(express.json());
+app.use((_req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
 
 // Serve static assets from Vite production build
 app.use(express.static(distPath));
